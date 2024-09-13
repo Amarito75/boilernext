@@ -14,6 +14,38 @@ pnpm dev
 bun dev
 ```
 
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
+CLERK_WEBHOOK_SECRET=your_clerk_webhook_secret
+```
+
+Make sure to replace the placeholder values with your actual credentials.
+
+## API Routes
+
+The project includes a webhook handler for Clerk events in the `@api` folder:
+
+### `/api/webhooks/clerk/route.ts`
+
+This route handles Clerk webhook events for user management:
+
+- Verifies the incoming webhook using the `CLERK_WEBHOOK_SECRET`
+- Processes user creation, update, and deletion events
+- Updates the local database (using Prisma) based on the Clerk events
+
+The webhook handles the following events:
+
+- `user.created`: Creates a new user in the database
+- `user.updated`: Updates existing user information
+- `user.deleted`: Removes the user from the database
+
+To view the full implementation, check the file:
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
