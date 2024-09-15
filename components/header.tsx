@@ -2,6 +2,7 @@ import React from "react";
 import NavItem from "./ui/nav-item";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import Logo from "./logo";
 
 const navItems = [
   {
@@ -21,6 +22,7 @@ const navItems = [
 const Header = () => {
   return (
     <nav className="top-0 w-full justify-around flex items-center py-6 border-b border-border">
+      <Logo />
       {navItems.map((item, index) => (
         <NavItem key={index} href={item.href} label={item.label} />
       ))}

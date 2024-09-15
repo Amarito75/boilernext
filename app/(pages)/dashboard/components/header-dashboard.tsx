@@ -5,7 +5,7 @@ import { currentUser } from "@clerk/nextjs/server";
 const HeaderDashboard = async () => {
   const user = await currentUser();
   return (
-    <nav className="flex items-center justify-between p-6 border-b border-border">
+    <nav className="flex items-center justify-between p-6 py-8 border-b border-border">
       <div className="flex items-center gap-x-4 absolute right-4">
         <h1 className="text-md text-primary flex items-center gap-x-1">
           Hello{" "}

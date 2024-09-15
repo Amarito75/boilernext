@@ -18,7 +18,7 @@ const navItems = [
 
 const Sidebar = () => {
   return (
-    <div className="flex flex-col items-start p-8 border-r border-border h-screen">
+    <div className="flex flex-col items-start p-8 border-r border-border h-screen space-y-8">
       <div className="flex items-center justify-center place-self-center">
         <Image src="/pictures/logo.svg" alt="logo" width={100} height={100} />
       </div>
