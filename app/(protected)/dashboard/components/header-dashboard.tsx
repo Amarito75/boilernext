@@ -9,9 +9,9 @@ const HeaderDashboard = async () => {
       <div className="flex items-center gap-x-4 absolute right-4">
         <h1 className="text-md text-primary flex items-center gap-x-1">
           Hello{" "}
-          <h1 className="text-md text-primary font-semibold">
+          <span className="text-md text-primary font-semibold">
             {user?.fullName}
-          </h1>
+          </span>
         </h1>
         <UserButton />
       </div>

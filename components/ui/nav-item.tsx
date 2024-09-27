@@ -17,8 +17,10 @@ const NavItem = ({ href, label, icon }: NavItemProps) => {
   return (
     <Link
       href={href}
-      className={`flex items-center text-lg font-medium text-primary px-4 py-2 rounded-lg w-48 ${
-        isActive ? "bg-secondary" : "hover:bg-secondary"
+      className={`flex items-center text-lg font-medium text-primary px-4 py-2 rounded-lg ${
+        isActive
+          ? "underline underline-offset-4"
+          : "hover:underline underline-offset-4"
       }`}
     >
       {icon}
