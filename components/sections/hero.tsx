@@ -2,7 +2,7 @@ import React from "react";
 import { LinkServices } from "../link-services";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
-import { PreviewDashboard } from "./preview-dashboard";
+import PreviewDashboard from "./preview-dashboard";
 import { BorderBeam } from "../magicui/border-beam";
 
 const HeroSection = () => {

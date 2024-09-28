@@ -2,16 +2,8 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
-import {
-  IconBoxAlignRightFilled,
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Lock } from "lucide-react";
 import {
   SiClerk,
   SiResend,
@@ -19,21 +11,34 @@ import {
   SiShadcnui,
   SiSupabase,
 } from "react-icons/si";
+import { Layout, LayoutDashboard } from "lucide-react";
 
 export function BentoFeatures() {
   return (
-    <BentoGrid className="w-full mx-auto md:auto-rows-[20rem] mt-16">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.description}
-          header={item.header}
-          className={cn("[&>p:text-lg]", item.className)}
-          icon={item.icon}
-        />
-      ))}
-    </BentoGrid>
+    <div className="flex flex-col items-start justify-center mt-16 space-y-4">
+      <div className="flex items-center space-x-2">
+        <LayoutDashboard className="text-primary" />
+        <h2 className="shrink-0 text-xl font-bold text-primary">
+          All in one solution
+        </h2>
+      </div>
+      <h1 className="text-5xl text-primary">
+        Retrieve all the <span className="font-semibold">best tools</span> to
+        develop a <span className="font-semibold">SaaS in 2025</span>
+      </h1>
+      <BentoGrid className="w-full mx-auto md:auto-rows-[20rem] ">
+        {items.map((item, i) => (
+          <BentoGridItem
+            key={i}
+            title={item.title}
+            description={item.description}
+            header={item.header}
+            className={cn("[&>p:text-lg]", item.className)}
+            icon={item.icon}
+          />
+        ))}
+      </BentoGrid>
+    </div>
   );
 }
 
@@ -304,10 +309,10 @@ const SkeletonFive = () => {
 };
 const items = [
   {
-    title: "Authentication",
+    title: "Clerk",
     description: (
       <span className="text-sm">
-        Experience the power of AI in generating unique content.
+        Use Clerk to manage your users and their data.
       </span>
     ),
     header: <SkeletonOne />,
@@ -315,22 +320,16 @@ const items = [
     icon: <SiClerk className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Emailing",
-    description: (
-      <span className="text-sm">
-        Let AI handle the proofreading of your documents.
-      </span>
-    ),
+    title: "Resend",
+    description: <span className="text-sm">Manage emailing with Resend.</span>,
     header: <SkeletonTwo />,
     className: "md:col-span-1",
     icon: <SiResend className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Payment",
+    title: "Stripe  ",
     description: (
-      <span className="text-sm">
-        Get AI-powered suggestions based on your writing context.
-      </span>
+      <span className="text-sm">Provide payment simply with Stripe.</span>
     ),
     header: <SkeletonThree />,
     className: "md:col-span-1",
@@ -340,7 +339,8 @@ const items = [
     title: "Supabase",
     description: (
       <span className="text-sm">
-        Understand the sentiment of your text with AI analysis.
+        Supabase is a cloud database that is designed to be a drop-in
+        replacement for Firebase.
       </span>
     ),
     header: <SkeletonFour />,
@@ -352,7 +352,8 @@ const items = [
     title: "shadcn/ui",
     description: (
       <span className="text-sm">
-        Summarize your lengthy documents with AI technology.
+        shadcn/ui is a library of components that are designed to be a drop-in
+        replacement for Tailwind CSS.
       </span>
     ),
     header: <SkeletonFive />,
