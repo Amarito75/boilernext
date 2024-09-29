@@ -6,6 +6,19 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import Logo from "./logo";
 import { DarkModeToggle } from "./ui/darkmode-toggle";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Menu, X } from "lucide-react";
+import { Input } from "postcss";
+import { Label } from "recharts";
 
 const navItems = [
   {
@@ -14,7 +27,7 @@ const navItems = [
   },
   {
     label: "Documentation",
-    href: "/documentation",
+    href: "/docs",
   },
   {
     label: "Contact",
@@ -43,21 +56,54 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed top-0  w-full justify-around flex items-center py-6 transition-transform duration-300 ${
+      className={`fixed top-0 bg-white dark:bg-card z-50 w-full py-6 transition-transform duration-300 border-b border-border ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <Logo />
-      <nav className="flex items-center bg-background/50 backdrop-blur-xl justify-between space-x-8 border border-border rounded-full px-2">
-        {navItems.map((item, index) => (
-          <NavItem key={index} href={item.href} label={item.label} />
-        ))}
-      </nav>
-      <div className="flex items-center gap-4">
-        <DarkModeToggle />
-        <Link href={"/sign-in"}>
-          <Button>Sign In</Button>
-        </Link>
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        <Logo />
+        <nav className="py-2 hidden md:flex items-center bg-background/50 backdrop-blur-xl space-x-8 border border-border rounded-full px-2">
+          {navItems.map((item, index) => (
+            <NavItem key={index} href={item.href} label={item.label} />
+          ))}
+        </nav>
+        <div className="hidden md:flex items-center gap-4">
+          <DarkModeToggle />
+          <Link href={"/sign-in"}>
+            <Button>Sign In</Button>
+          </Link>
+        </div>
+        <div className="block md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Menu size={24} className="text-black dark:text-white" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent className="w-full bg-muted">
+              <SheetHeader>
+                <div className="flex items-center justify-between">
+                  <SheetTitle className="text-black dark:text-white">
+                    BoilerNext
+                  </SheetTitle>
+                  <SheetClose asChild>
+                    <Button variant="outline" size="icon">
+                      <X size={24} className="text-black dark:text-white" />
+                    </Button>
+                  </SheetClose>
+                </div>
+              </SheetHeader>
+              {navItems.map((item, index) => (
+                <NavItem key={index} href={item.href} label={item.label} />
+              ))}
+              <SheetFooter className="flex justify-center items-center">
+                <Link href={"/sign-in"}>
+                  <Button size="lg">Sign In</Button>
+                </Link>
+              </SheetFooter>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </div>
   );

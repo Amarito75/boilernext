@@ -58,7 +58,7 @@ export function PieGraph() {
   }, []);
 
   return (
-    <Card className="flex flex-col bg-background">
+    <Card className="flex flex-col">
       <CardHeader className="items-center pb-0">
         <CardTitle>Pie Chart - Donut with Text</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
@@ -71,12 +71,7 @@ export function PieGraph() {
           <PieChart>
             <ChartTooltip
               cursor={false}
-              content={
-                <ChartTooltipContent
-                  hideLabel
-                  className="text-black dark:text-white bg-background"
-                />
-              }
+              content={<ChartTooltipContent hideLabel className="bg-muted" />}
             />
             <Pie
               data={chartData}
@@ -84,31 +79,23 @@ export function PieGraph() {
               nameKey="browser"
               innerRadius={60}
               strokeWidth={5}
-              className="text-black dark:text-white"
             >
               <Label
-                className="text-black dark:text-white"
                 content={({ viewBox }) => {
                   if (viewBox && "cx" in viewBox && "cy" in viewBox) {
                     return (
-                      <text
-                        x={viewBox.cx}
-                        y={viewBox.cy}
-                        textAnchor="middle"
-                        dominantBaseline="middle"
-                        className="text-black dark:text-white"
-                      >
+                      <text x={viewBox.cx} y={viewBox.cy} textAnchor="middle">
                         <tspan
                           x={viewBox.cx}
                           y={viewBox.cy}
-                          className="fill-foreground text-3xl font-bold text-black dark:text-white"
+                          className="fill-foreground text-3xl font-bold"
                         >
                           {totalVisitors.toLocaleString()}
                         </tspan>
                         <tspan
                           x={viewBox.cx}
                           y={(viewBox.cy || 0) + 24}
-                          className="fill-muted-foreground text-black dark:text-white"
+                          className="fill-muted-foreground"
                         >
                           Visitors
                         </tspan>

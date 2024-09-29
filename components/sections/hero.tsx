@@ -3,22 +3,29 @@ import { LinkServices } from "../link-services";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import PreviewDashboard from "./preview-dashboard";
-import { BorderBeam } from "../magicui/border-beam";
+import { FlipWords } from "../effects/flip-words";
+import Link from "next/link";
+
+const words = ["faster", "safer", "smarter", "better"];
 
 const HeroSection = () => {
   return (
-    <div className="mt-16 lg:mt-32 flex flex-col items-center justify-center text-center space-y-8">
-      <h1 className="text-8xl text-primary font-medium mx-16">
-        The ultimate boilerplate to develop your SaaS
-      </h1>
-      <h2 className="text-primary text-3xl">
+    <div className="mt-16 lg:mt-20 flex flex-col items-center justify-center text-center space-y-8">
+      <div className="w-full flex-wrap text-5xl lg:text-7xl text-black dark:text-white shrink-0 text-center font-medium mx-16">
+        Develop your SaaS <br />
+        <FlipWords words={words} /> <br />
+        with BoilerNext
+      </div>
+      <h2 className="text-black dark:text-white lg:text-3xl">
         Develop your SaaS with all the tools you need
       </h2>
       <div className="flex gap-4">
-        <Button size="lg">
-          Get Started
-          <ArrowRight className="ml-2" size={18} />
-        </Button>
+        <Link href="/sign-up">
+          <Button size="lg">
+            Get Started
+            <ArrowRight className="ml-2" size={18} />
+          </Button>
+        </Link>
         <Button
           variant="outline"
           size="lg"

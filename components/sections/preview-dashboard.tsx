@@ -13,11 +13,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { BorderBeam } from "../effects/border-beam";
 
 export default function PreviewDashboard() {
   return (
     <PageContainer scrollable={false}>
-      <div className="space-y-2 border border-border rounded-lg p-4 drop-shadow-sm">
+      <div className="relative space-y-2 border bg-muted/20 border-border rounded-lg p-4 drop-shadow-sm w-full">
+        <BorderBeam size={250} duration={12} delay={9} />
         <div className="flex items-center justify-between space-y-2">
           <h2 className="text-2xl font-bold text-primary tracking-tight">
             Hi, Welcome back 👋
@@ -36,7 +38,7 @@ export default function PreviewDashboard() {
           </TabsList>
           <TabsContent value="overview" className="space-y-4">
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-              <Card className="bg-background">
+              <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">
                     Total Revenue
@@ -61,7 +63,7 @@ export default function PreviewDashboard() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="bg-background">
+              <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">
                     Subscriptions
@@ -88,7 +90,7 @@ export default function PreviewDashboard() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="bg-background">
+              <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">Sales</CardTitle>
                   <svg
@@ -112,7 +114,7 @@ export default function PreviewDashboard() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="bg-background">
+              <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium">
                     Active Now
@@ -142,7 +144,7 @@ export default function PreviewDashboard() {
               <div className="col-span-4">
                 <BarGraph />
               </div>
-              <Card className="col-span-4 md:col-span-3 bg-background">
+              <Card className="col-span-4 md:col-span-3">
                 <CardHeader>
                   <CardTitle>Recent Sales</CardTitle>
                   <CardDescription>

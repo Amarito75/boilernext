@@ -39,7 +39,7 @@ const chartConfig = {
 
 export function AreaGraph() {
   return (
-    <Card className="bg-background">
+    <Card>
       <CardHeader>
         <CardTitle>Area Chart - Stacked</CardTitle>
         <CardDescription>
@@ -70,10 +70,7 @@ export function AreaGraph() {
             <ChartTooltip
               cursor={false}
               content={
-                <ChartTooltipContent
-                  indicator="dot"
-                  className="bg-background"
-                />
+                <ChartTooltipContent indicator="dot" className="bg-muted" />
               }
             />
             <Area
