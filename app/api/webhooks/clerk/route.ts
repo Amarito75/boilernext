@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Webhook } from "svix";
-import { PrismaClient } from "@prisma/client";
 import { WebhookEvent } from "@clerk/nextjs/server";
+import prismadb from "@/lib/prismadb";
 
-const prisma = new PrismaClient();
 const webhookSecret = process.env.CLERK_WEBHOOK_SECRET;
 
 export async function POST(req: NextRequest) {
@@ -46,7 +45,7 @@ export async function POST(req: NextRequest) {
         console.log(`Processing ${evt.type} event for user ${evt.data.id}`);
         console.log("User data:", JSON.stringify(evt.data, null, 2));
         try {
-          const user = await prisma.user.upsert({
+          const user = await prismadb.user.upsert({
             where: { userId: evt.data.id },
             create: {
               userId: evt.data.id,
@@ -72,7 +71,7 @@ export async function POST(req: NextRequest) {
       case "user.deleted":
         console.log(`Processing user.deleted event for user ${evt.data.id}`);
         try {
-          await prisma.user.delete({ where: { userId: evt.data.id } });
+          await prismadb.user.delete({ where: { userId: evt.data.id } });
           console.log(`User ${evt.data.id} deleted from Supabase`);
         } catch (error) {
           console.error(
