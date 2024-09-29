@@ -55,11 +55,7 @@ const Header = () => {
   }, [lastScrollY]);
 
   return (
-    <div
-      className={`fixed top-0 bg-white dark:bg-card z-50 w-full py-6 transition-transform duration-300 border-b border-border ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
-    >
+    <div className="fixed top-0 bg-white dark:bg-card z-50 w-full py-6 transition-transform duration-300 border-b border-border">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Logo />
         <nav className="py-2 hidden md:flex items-center bg-background/50 backdrop-blur-xl space-x-8 border border-border rounded-full px-2">
