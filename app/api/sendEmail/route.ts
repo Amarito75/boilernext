@@ -2,11 +2,9 @@ import { NextResponse } from "next/server";
 import { EmailTemplate } from "../../../components/email-templates/basic-mail";
 import { Resend } from "resend";
 import { auth } from "@clerk/nextjs/server";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-const prisma = new PrismaClient();
 
 export async function POST(req: Request) {
   try {
