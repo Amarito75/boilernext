@@ -5,6 +5,7 @@ import { auth } from "@clerk/nextjs/server";
 import prismadb from "@/lib/prismadb";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const customEmail = process.env.RESEND_CUSTOM_EMAIL || "";
 
 export async function POST(req: Request) {
   try {
@@ -15,7 +16,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { mail, subject, message } = body;
     const { data, error } = await resend.emails.send({
-      from: "Amar <contact@amarfreelance.com>",
+      from: customEmail,
       to: [mail],
       subject: subject,
       react: EmailTemplate({

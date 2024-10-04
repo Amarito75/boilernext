@@ -17,7 +17,7 @@ const folderStructure = `
 
 const Authentication = () => {
   return (
-    <div className="w-full space-y-4">
+    <div className="w-full space-y-4 mb-32">
       <h1 className="text-black dark:text-white text-2xl font-bold">
         <SiClerk className="inline-block mr-2 text-primary" /> Authentication
       </h1>
@@ -53,6 +53,19 @@ CLERK_WEBHOOK_SECRET=<your-webhook-secret>`}
       <p className="text-black dark:text-white">
         The sign-in and sign-up pages are located in the auth folder. You can
         customize the pages as you want.
+      </p>
+      <h2 className="text-lg font-semibold text-black dark:text-white mt-4">
+        Redirection
+      </h2>
+      <CodeSnippet
+        text={`NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
+          NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
+          `}
+        title={".env"}
+      />
+      <p className="text-black dark:text-white">
+        You can customize the redirection after sign-in and sign-up by editing
+        the routes in .env file
       </p>
     </div>
   );
