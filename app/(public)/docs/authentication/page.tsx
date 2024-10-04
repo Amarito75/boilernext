@@ -1,6 +1,6 @@
 "use client";
 
-import CodeSnippet from "@/components/ui/code-snippet";
+import CodeBlock from "@/components/ui/code-block";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import React from "react";
@@ -40,7 +40,7 @@ const Authentication = () => {
         </a>{" "}
         account and get your API keys and also a webhook secret
       </h2>
-      <CodeSnippet
+      <CodeBlock
         text={`NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<your-publishable-key>
 CLERK_SECRET_KEY=<your-secret-key>
 CLERK_WEBHOOK_SECRET=<your-webhook-secret>`}
@@ -49,7 +49,7 @@ CLERK_WEBHOOK_SECRET=<your-webhook-secret>`}
       <h2 className="text-lg font-semibold text-black dark:text-white mt-4">
         Folder Structure
       </h2>
-      <CodeSnippet text={folderStructure} title="/app/(auth)" />
+      <CodeBlock text={folderStructure} title="/app/(auth)" />
       <p className="text-black dark:text-white">
         The sign-in and sign-up pages are located in the auth folder. You can
         customize the pages as you want.
@@ -57,7 +57,7 @@ CLERK_WEBHOOK_SECRET=<your-webhook-secret>`}
       <h2 className="text-lg font-semibold text-black dark:text-white mt-4">
         Redirection
       </h2>
-      <CodeSnippet
+      <CodeBlock
         text={`NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
           NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
           `}

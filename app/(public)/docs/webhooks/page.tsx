@@ -1,4 +1,4 @@
-import CodeSnippet from "@/components/ui/code-snippet";
+import CodeBlock from "@/components/ui/code-block";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import React from "react";
@@ -37,16 +37,16 @@ const Webhooks = () => {
             <p className="text-black dark:text-white">
               Start your local server
             </p>
-            <CodeSnippet text={"npm run dev"} title={"terminal"} />
+            <CodeBlock text={"npm run dev"} title={"terminal"} />
             <p className="text-black dark:text-white">
               Start Ngrok to create a tunnel to your local server
             </p>
-            <CodeSnippet text={"ngrok http 3000"} title={"terminal"} />
+            <CodeBlock text={"ngrok http 3000"} title={"terminal"} />
             <p className="text-black dark:text-white">
               Copy the forwarded URL and add it to your webhook in the Clerk
               dashboard
             </p>
-            <CodeSnippet
+            <CodeBlock
               text={"https://<ngrok-url>/api/webhooks/clerk"}
               title={"ngrok"}
             />
@@ -77,16 +77,16 @@ const Webhooks = () => {
             <p className="text-black dark:text-white">
               Start your local server
             </p>
-            <CodeSnippet text={"npm run dev"} title={"terminal"} />
+            <CodeBlock text={"npm run dev"} title={"terminal"} />
             <p className="text-black dark:text-white">
               Start Ngrok to create a tunnel to your local server
             </p>
-            <CodeSnippet text={"ngrok http 3000"} title={"terminal"} />
+            <CodeBlock text={"ngrok http 3000"} title={"terminal"} />
             <p className="text-black dark:text-white">
               Copy the forwarded URL and add it to your webhook in the Stripe
               dashboard
             </p>
-            <CodeSnippet
+            <CodeBlock
               text={"https://<ngrok-url>/api/webhooks/stripe"}
               title={"ngrok"}
             />

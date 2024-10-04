@@ -1,5 +1,5 @@
 import React from "react";
-import CodeSnippet from "@/components/ui/code-snippet";
+import CodeBlock from "@/components/ui/code-block";
 
 const ProjectStructure = () => {
   const code = `
@@ -16,7 +16,7 @@ app
       <h1 className="text-2xl font-bold mb-4 text-black dark:text-white">
         Project Structure
       </h1>
-      <CodeSnippet text={code} title="Project Structure" />
+      <CodeBlock text={code} title="Project Structure" />
     </div>
   );
 };

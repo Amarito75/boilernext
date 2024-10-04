@@ -23,6 +23,20 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   emails    Email[] 
+  orders    Order[]
+}
+
+model Order {
+  id      String   @id @default(uuid())
+  userId  String
+  user    User     @relation(fields: [userId], references: [id])
+  totalPrice   Int
+  status  String
+  productId String
+  phoneCustomer String
+  emailCustomer String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 

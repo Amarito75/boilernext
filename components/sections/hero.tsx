@@ -12,12 +12,12 @@ const HeroSection = () => {
   return (
     <div className="mt-16 lg:mt-20 flex flex-col items-center justify-center text-center space-y-8">
       <div className="w-full flex-wrap text-5xl lg:text-7xl text-black dark:text-white shrink-0 text-center font-medium mx-16">
-        Develop your SaaS <br />
+        Build your admin dashboard <br />
         <FlipWords words={words} /> <br />
         with BoilerNext
       </div>
       <h2 className="text-black dark:text-white lg:text-3xl">
-        Develop your SaaS with all the tools you need
+        Build your admin dash with all the tools you need
       </h2>
       <div className="flex gap-4">
         <Link href="/sign-up">

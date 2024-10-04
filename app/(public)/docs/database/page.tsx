@@ -1,4 +1,4 @@
-import CodeSnippet from "@/components/ui/code-snippet";
+import CodeBlock from "@/components/ui/code-block";
 import { Separator } from "@/components/ui/separator";
 import React from "react";
 import { SiSupabase } from "react-icons/si";
@@ -32,7 +32,7 @@ const Database = () => {
         ORM
         {">"}Prisma
       </h2>
-      <CodeSnippet
+      <CodeBlock
         text={`DATABASE_URL="postgresql://user:password@host:6543/database?pgbouncer=true"
 DIRECT_URL="postgresql://user:password@host:5432/database"`}
         title={".env"}
@@ -47,7 +47,7 @@ DIRECT_URL="postgresql://user:password@host:5432/database"`}
       <p className="text-black dark:text-white">
         In the schema.prisma file you can create tables, models, etc.
       </p>
-      <CodeSnippet
+      <CodeBlock
         text={`model User {
   id      String   @id @default(uuid())
   userId  String   @unique

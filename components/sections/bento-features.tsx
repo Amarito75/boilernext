@@ -11,12 +11,23 @@ import {
   SiShadcnui,
   SiSupabase,
 } from "react-icons/si";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Layout, LayoutDashboard } from "lucide-react";
 import { AnimatedTooltip } from "../ui/animated-tooltip";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { PieGraph } from "../charts/pie-graph";
 import { BarTooltip } from "../charts/bar-tooltip";
+import { Calendar } from "../ui/calendar";
+import { CalendarDateRangePicker } from "../ui/date-range-picker";
 
 export function BentoFeatures() {
   return (
@@ -259,10 +270,28 @@ const SkeletonFive = () => {
     >
       <motion.div
         variants={variants}
-        className="flex flex-row rounded-2xl p-2  items-start space-x-2"
+        className="flex flex-col rounded-2xl p-2 items-start space-y-2 w-full"
       >
-        <Input placeholder="Placeholder" />
-        <Button>Search</Button>
+        <div className="flex items-center justify-between w-full space-x-2">
+          <Input placeholder="Placeholder" />
+          <Button>Search</Button>
+        </div>
+        <CalendarDateRangePicker />
+        <Select>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Select a fruit" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Fruits</SelectLabel>
+              <SelectItem value="apple">Apple</SelectItem>
+              <SelectItem value="banana">Banana</SelectItem>
+              <SelectItem value="blueberry">Blueberry</SelectItem>
+              <SelectItem value="grapes">Grapes</SelectItem>
+              <SelectItem value="pineapple">Pineapple</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>{" "}
       </motion.div>
       <motion.div
         variants={variantsSecond}

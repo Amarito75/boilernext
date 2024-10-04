@@ -1,5 +1,5 @@
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import CodeSnippet from "@/components/ui/code-snippet";
+import CodeBlock from "@/components/ui/code-block";
 import { Separator } from "@/components/ui/separator";
 import { CircleAlert } from "lucide-react";
 import React from "react";
@@ -41,7 +41,7 @@ const Emailing = () => {
         1. Get your domain verified & insert your api key in .env file & also
         your custom email
       </h3>
-      <CodeSnippet
+      <CodeBlock
         text={`RESEND_API_KEY=re_your_resend_api_key_here
 RESEND_CUSTOM_EMAIL=your_custom_email@example.com`}
         title={".env"}
@@ -65,7 +65,7 @@ RESEND_CUSTOM_EMAIL=your_custom_email@example.com`}
           /components/email-templates
         </code>
       </p>
-      <CodeSnippet
+      <CodeBlock
         text={`import * as React from "react";
 
 
@@ -95,10 +95,10 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
         you change your email
       </h3>
       <p className="text-black dark:text-white">
-        You can use the email template in your app by importing it and passing
-        the email and message as props.
+        Here is a simple route to send an email with the React Email template
+        and if success it will save the email in the database.
       </p>
-      <CodeSnippet
+      <CodeBlock
         text={`import { NextResponse } from "next/server";
 import { EmailTemplate } from "../../../components/email-templates/basic-mail";
 import { Resend } from "resend";
@@ -152,7 +152,7 @@ export async function POST(req: Request) {
   }
 }
 `}
-        title={"/app/(private)/api/email/send"}
+        title={"/app/(private)/api/sendEmail"}
       />
     </div>
   );

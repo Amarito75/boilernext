@@ -1,5 +1,5 @@
 import React from "react";
-import CodeSnippet from "../../../components/ui/code-snippet";
+import CodeBlock from "../../../components/ui/code-block";
 
 const DocsPage = () => {
   const documentationCode = [
@@ -9,11 +9,13 @@ const DocsPage = () => {
 cd nextjs-boilerplate
 npm install`,
       fileTitle: "terminal",
+      language: "bash",
     },
     {
       title: "Run the development server",
       code: "npm run dev",
       fileTitle: "terminal",
+      language: "bash",
     },
     {
       title: "Rename the .env.example file to .env",
@@ -50,7 +52,11 @@ RESEND_API_KEY=<YOUR_RESEND_API_KEY>`,
           <h2 className="text-xl font-semibold mt-6 mb-2 text-black dark:text-white">
             {doc.title}
           </h2>
-          <CodeSnippet text={doc.code} title={doc.fileTitle} />
+          <CodeBlock
+            text={doc.code}
+            title={doc.fileTitle}
+            language={doc.language}
+          />
         </div>
       ))}
       <h2 className="text-xl font-semibold mt-6 mb-32 text-black dark:text-white">
