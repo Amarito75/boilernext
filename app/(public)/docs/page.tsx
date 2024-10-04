@@ -1,5 +1,5 @@
 import React from "react";
-import CodeSnippet from "./components/code-snippet";
+import CodeSnippet from "../../../components/ui/code-snippet";
 
 const DocsPage = () => {
   const documentationCode = [
@@ -37,27 +37,27 @@ RESEND_API_KEY=<YOUR_RESEND_API_KEY>`,
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center w-full max-w-3xl mx-auto px-4">
-      <div className="w-full">
-        <h1 className="text-2xl font-bold mb-4 text-black dark:text-white">
-          Hello, welcome to BoilerNext 👋
-        </h1>
-        <p className="text-black dark:text-white">
-          Here is the documentation for BoilerNext. You need Node JS, Git and
-          npm installed on your computer.
-        </p>
-        {documentationCode.map((doc, index) => (
-          <div key={index}>
-            <h2 className="text-xl font-semibold mt-6 mb-2">{doc.title}</h2>
-            <CodeSnippet text={doc.code} title={doc.fileTitle} />
-          </div>
-        ))}
-        <h2 className="text-xl font-semibold mt-6 mb-32">
-          Open{" "}
-          <code className="bg-card p-1 rounded-md">http://localhost:3000</code>{" "}
-          in your browser to see the result.
-        </h2>
-      </div>
+    <div className="w-full">
+      <h1 className="text-2xl font-bold mb-4 text-black dark:text-white">
+        Hello, welcome to BoilerNext 👋
+      </h1>
+      <p className="text-black dark:text-white">
+        Here is the documentation for BoilerNext. You need Node JS, Git and npm
+        installed on your computer.
+      </p>
+      {documentationCode.map((doc, index) => (
+        <div key={index}>
+          <h2 className="text-xl font-semibold mt-6 mb-2 text-black dark:text-white">
+            {doc.title}
+          </h2>
+          <CodeSnippet text={doc.code} title={doc.fileTitle} />
+        </div>
+      ))}
+      <h2 className="text-xl font-semibold mt-6 mb-32 text-black dark:text-white">
+        Open{" "}
+        <code className="bg-card p-1 rounded-md">http://localhost:3000</code> in
+        your browser to see the result.
+      </h2>
     </div>
   );
 };

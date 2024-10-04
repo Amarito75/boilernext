@@ -13,6 +13,10 @@ import {
 } from "react-icons/si";
 import { Layout, LayoutDashboard } from "lucide-react";
 import { AnimatedTooltip } from "../ui/animated-tooltip";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { PieGraph } from "../charts/pie-graph";
+import { BarTooltip } from "../charts/bar-tooltip";
 
 export function BentoFeatures() {
   return (
@@ -195,52 +199,28 @@ const SkeletonFour = () => {
         variants={first}
         className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
-        <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Just code in Vanilla Javascript
-        </p>
-        <p className="border border-red-500 bg-red-100 dark:bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Delusional
-        </p>
+        <h1 className="text-lg text-primary font-bold">Orders</h1>
+        <p className="text-sm text-muted-foreground">Order ID</p>
+        <p className="text-sm text-muted-foreground">Order Date</p>
+        <p className="text-sm text-muted-foreground">Order Status</p>
+        <p className="text-sm text-muted-foreground">Order Total</p>
       </motion.div>
       <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
-        <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Tailwind CSS is cool, you know
-        </p>
-        <p className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Sensible
-        </p>
+        <h1 className="text-lg text-primary font-bold">Mail</h1>
+        <p className="text-sm text-muted-foreground">Email</p>
+        <p className="text-sm text-muted-foreground">Subject</p>
+        <p className="text-sm text-muted-foreground">Body</p>
+        <p className="text-sm text-muted-foreground">Created At</p>
       </motion.div>
       <motion.div
         variants={second}
         className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
-        <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          I love angular, RSC, and Redux.
-        </p>
-        <p className="border border-orange-500 bg-orange-100 dark:bg-orange-900/20 text-orange-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Helpless
-        </p>
+        <h1 className="text-lg text-primary font-bold">Users</h1>
+        <p className="text-sm text-muted-foreground">firstName</p>
+        <p className="text-sm text-muted-foreground">lastName</p>
+        <p className="text-sm text-muted-foreground">email</p>
+        <p className="text-sm text-muted-foreground">createdAt</p>
       </motion.div>
     </motion.div>
   );
@@ -279,27 +259,15 @@ const SkeletonFive = () => {
     >
       <motion.div
         variants={variants}
-        className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black"
+        className="flex flex-row rounded-2xl p-2  items-start space-x-2"
       >
-        <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
-        <p className="text-xs text-neutral-500">
-          There are a lot of cool framerworks out there like React, Angular,
-          Vue, Svelte that can make your life ....
-        </p>
+        <Input placeholder="Placeholder" />
+        <Button>Search</Button>
       </motion.div>
       <motion.div
         variants={variantsSecond}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black"
-      >
-        <p className="text-xs text-neutral-500">Use PHP.</p>
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0" />
-      </motion.div>
+        className="flex flex-row rounded-full p-2 items-center justify-end space-x-2 w-full ml-auto"
+      ></motion.div>
     </motion.div>
   );
 };
@@ -347,7 +315,7 @@ const items = [
   {
     title: "shadcn/ui",
     description: (
-      <span className="text-sm">
+      <span className="text-sm z-50">
         shadcn/ui is a library of components that are designed to be a drop-in
         replacement for Tailwind CSS.
       </span>

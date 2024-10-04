@@ -1,10 +1,13 @@
-import React from "react";
+import Link from "next/link";
 import Image from "next/image";
+import React from "react";
+
 const Logo = () => {
   return (
-    <div className="flex items-center justify-center place-self-center">
-      <Image src="/pictures/logo.svg" alt="logo" width={100} height={100} />
-    </div>
+    <Link href="/">
+      <Image src="/pictures/logo.svg" alt="Logo" width={40} height={40} />
+      <h1 className="text-2xl font-bold text-priary ml-4">BoilerNext</h1>
+    </Link>
   );
 };
 

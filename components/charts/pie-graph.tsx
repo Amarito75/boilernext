@@ -88,7 +88,7 @@ export function PieGraph() {
                         <tspan
                           x={viewBox.cx}
                           y={viewBox.cy}
-                          className="fill-foreground text-3xl font-bold"
+                          className="fill-black dark:fill-white text-3xl font-bold"
                         >
                           {totalVisitors.toLocaleString()}
                         </tspan>
